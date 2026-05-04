@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <!-- ============================================================
+       META & SEO
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LIVDEN | Transport Internațional Persoane și Colete – România, Austria, Germania, Belgia, Olanda, Anglia</title>
+  <meta name="description" content="LIVDEN – peste 20 de ani de experiență în transport internațional persoane și colete. Rute România – Austria – Germania – Belgia – Olanda – Anglia. Rezervă acum!" />
+  <meta name="keywords" content="transport persoane Romania Austria Germania, transport colete international, microbuz Romania Europa, LIVDEN transport, curier international Romania" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.livden.ro/" />
+  <meta property="og:title" content="LIVDEN | Transport Internațional Persoane și Colete" />
+  <meta property="og:description" content="Peste 20 de ani pe drumurile Europei. Transport persoane și colete România – Austria – Germania – Belgia – Olanda – Anglia." />
+
+  <!-- ============================================================
+       FONTS (Google Fonts – Barlow Condensed + Barlow)
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES – schimbă culorile ușor de aici
+    ============================================================ */
+    :root {
+      --c-dark:        #0a0a0a;       /* negru – fundal principal */
+      --c-navy:        #111111;       /* negru închis – carduri, secțiuni alternante */
+      --c-blue:        #222222;       /* gri foarte închis – hover carduri */
+      --c-accent:      #cc0000;       /* roșu pur – CTA principal */
+      --c-accent-h:    #e60000;       /* hover pe accent */
+      --c-gold:        #f0a500;       /* galben/auriu – stele recenzii */
+      --c-white:       #ffffff;
+      --c-light:       #f4f4f4;       /* fundal secțiuni deschise */
+      --c-text:        #b0b8c4;       /* text pe fundal întunecat */
+      --c-text-dark:   #1a1a1a;       /* text pe fundal deschis */
+      --c-border:      rgba(255,255,255,.08);
+
+      --font-display:  'Barlow Condensed', sans-serif;
+      --font-body:     'Barlow', sans-serif;
+
+      --radius:        10px;
+      --shadow:        0 8px 40px rgba(0,0,0,.35);
+      --transition:    .3s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--c-dark);
+      color: var(--c-text);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       UTILITIES
+    ============================================================ */
+    .container {
+      width: min(100%);
+      margin-inline: auto;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: .75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      color: var(--c-white);
+      margin-bottom: 1rem;
+    }
+
+    .section-title.dark { color: var(--c-text-dark); }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--c-text);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-sub.dark { color: #5a6e82; }
+
+    /* ---- Buttons ---- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--c-accent);
+      color: var(--c-white);
+      box-shadow: 0 6px 24px rgba(204,0,0,.5);
+    }
+    .btn-primary:hover {
+      background: var(--c-accent-h);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(204,0,0,.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--c-white);
+      border: 2px solid var(--c-white);
+    }
+    .btn-outline:hover {
+      background: var(--c-white);
+      color: var(--c-dark);
+    }
+
+    /* ---- Section padding ---- */
+    section { padding: 5rem 0; }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1rem 3rem;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+
+body.menu-open nav {
+  background-color: #0a0a0a !important;
+  transition: background-color 0.3s ease;
+}
+
+    #navbar.scrolled {
+      background: rgba(5,5,5,.98);
+      box-shadow: 0 2px 20px rgba(0,0,0,.7);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      color: var(--c-white);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .logo span { color: var(--c-accent); }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-text);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--c-white); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .3rem;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--c-white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* Mobile nav */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 1.2rem;
+      background: #0a0a0a;
+      padding: 1.5rem 1.5rem 2rem;
+      position: fixed;
+      top: 68px; left: 0; right: 0;
+      z-index: 999;
+      list-style: none;
+      border-bottom: 3px solid var(--c-accent);
+      align-items: flex-end;
+      text-align: right;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-white);
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      background: url("photo1.jpg") no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Hero background image + dark overlay */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero-bg.jpg'); /* pune imaginea ta cu același nume lângă fișierul HTML */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+
+    /* Overlay întunecat peste imagine – scoate CTA în evidență */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.62) 0%,
+        rgba(0,0,0,.70) 50%,
+        rgba(0,0,0,.80) 100%
+      );
+    }
+
+    /* Road-stripe decorative element */
+    .hero-stripes {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--c-accent) 0px,
+        var(--c-accent) 40px,
+        transparent 40px,
+        transparent 80px
+      );
+      z-index: 2;
+    }
+
+    /* Large decorative "20+" text */
+    .hero-deco {
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(12rem, 22vw, 22rem);
+      line-height: 1;
+      color: rgba(255,255,255,.03);
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 8rem 0 6rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(204,0,0,.15);
+      border: 1px solid rgba(204,0,0,.4);
+      color: var(--c-accent);
+      font-family: var(--font-display);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.7); }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 1.0;
+      color: var(--c-white);
+      margin-bottom: 1.2rem;
+      max-width: 820px;
+      text-align: center;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--c-accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--c-text);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Departures info bar */
+    .hero-departures {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(4px);
+      color: var(--c-white);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      padding: .65rem 1.4rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-departures strong {
+      color: var(--c-accent);
+      font-weight: 700;
+    }
+
+    .departures-icon { font-size: 1.15rem; }
+
+    /* Pulsing ring on CTA */
+    .btn-primary.ring {
+      position: relative;
+    }
+    .btn-primary.ring::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50px;
+      border: 2px solid rgba(204,0,0,.6);
+      animation: ring 2s infinite;
+    }
+    @keyframes ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.15); opacity: 0; }
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--c-border);
+      justify-content: center;
+    }
+
+    .stat-item { display: flex; flex-direction: column; gap: .2rem; align-items: center; text-align: center; }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: var(--c-white);
+      line-height: 1;
+    }
+
+    .stat-num span { color: var(--c-accent); }
+
+    .stat-label {
+      font-size: .85rem;
+      color: var(--c-text);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* ============================================================
+       ROUTE TICKER (scrolling marquee)
+    ============================================================ */
+    #ticker {
+      background: var(--c-accent);
+      padding: .75rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      gap: 0;
+      animation: ticker 22s linear infinite;
+    }
+
+    .ticker-item {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-white);
+      padding: 0 2rem;
+    }
+
+    .ticker-item::after {
+      content: '✦';
+      margin-left: 2rem;
+      opacity: .7;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       SERVICII (Services)
+    ============================================================ */
+    #servicii { background: var(--c-light); text-align: center;}
+
+    #servicii .section-sub{
+      text-align: center;
+      margin: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .service-card {
+      background: var(--c-white);
+      border-radius: var(--radius);
+      padding: 2.2rem 2rem;
+      border-top: 4px solid var(--c-accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.12);
+    }
+
+    .service-icon {
+      margin: auto;
+      width: 58px; height: 58px;
+      background: linear-gradient(135deg, var(--c-accent), var(--c-accent-h));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-icon svg { width: 30px; height: 30px; fill: none; stroke: var(--c-white); stroke-width: 2; }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--c-text-dark);
+      margin-bottom: .6rem;
+    }
+
+    .service-card p {
+      font-size: .95rem;
+      color: #5a6e82;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       RUTE (Routes / Countries)
+    ============================================================ */
+    #rute { background: var(--c-dark); }
+
+    .rute-header { text-align: center; max-width: 680px; margin: 0 auto 3rem; }
+    .rute-header .section-sub { margin-inline: auto; }
+
+    .countries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .country-card {
+      background: var(--c-navy);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1rem;
+      text-align: center;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      cursor: default;
+    }
+
+    .country-card:hover {
+      background: var(--c-blue);
+      border-color: var(--c-blue);
+      transform: translateY(-4px);
+    }
+
+    .country-flag { font-size: 2.6rem; margin-bottom: .6rem; line-height: 1; }
+
+    .country-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--c-white);
+      letter-spacing: .06em;
+    }
+
+    /* Route arrow line */
+    .route-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .route-step {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .08em;
+      color: var(--c-text);
+      text-transform: uppercase;
+    }
+
+    .route-arrow {
+      color: var(--c-accent);
+      font-size: 1.1rem;
+    }
+
+    /* ============================================================
+       GALERIE / SLIDESHOW
+    ============================================================ */
+    #galerie { background: var(--c-navy); overflow: hidden; }
+
+    .galerie-header { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; }
+
+    /* Carousel */
+    .carousel {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .slides-wrapper {
+      display: flex;
+      transition: transform .6s cubic-bezier(.77,0,.18,1);
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 420px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+  
+    }
+
+    /* SVG-illustrated slides (no external images needed) */
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+        background-position: center 50%;
+
+    }
+
+
+    .slide-caption {
+      position: relative;
+      z-index: 2;
+      padding: 1.8rem 2rem;
+      background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 100%);
+      width: 100%;
+    }
+
+    .slide-caption h4 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--c-white);
+      margin-bottom: .3rem;
+    }
+
+    .slide-caption p { font-size: .9rem; color: rgba(255,255,255,.75); }
+
+    /* Carousel controls */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: var(--c-white);
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      transition: background var(--transition);
+    }
+    .carousel-btn:hover { background: var(--c-accent); border-color: var(--c-accent); }
+    .carousel-btn.prev { left: 1rem; }
+    .carousel-btn.next { right: 1rem; }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: 1.5rem;
+    }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .dot.active { background: var(--c-accent); transform: scale(1.4); }
+
+    /* ============================================================
+       DESPRE NOI (About)
+    ============================================================ */
+    #despre { background: var(--c-light); }
+
+    .despre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .despre-visual {
+      position: relative;
+    }
+
+    .despre-card-main {
+      background: var(--c-dark);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .despre-card-main::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--c-accent), var(--c-blue));
+    }
+
+    .experience-badge {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--c-accent);
+      line-height: 1;
+    }
+
+    .experience-badge sup { font-size: 2rem; }
+
+    .despre-card-main h3 {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--c-white);
+      margin-bottom: .5rem;
+    }
+
+    .despre-card-main p { font-size: .95rem; color: var(--c-text); }
+
+    /* Floating small card */
+    .despre-card-mini {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      background: var(--c-accent);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 8px 24px rgba(232,76,30,.4);
+    }
+
+    .despre-card-mini .mini-num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--c-white);
+      line-height: 1;
+    }
+
+    .despre-card-mini .mini-label {
+      font-size: .78rem;
+      color: rgba(255,255,255,.85);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .despre-text .section-title { color: var(--c-text-dark); }
+
+    .despre-text p {
+      font-size: 1rem;
+      color: #5a6e82;
+      margin-bottom: 1rem;
+    }
+
+    /* Values list */
+    .values-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; margin-bottom: 2rem; }
+
+    .values-list li {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .95rem;
+      color: var(--c-text-dark);
+      font-weight: 500;
+    }
+
+    .values-list li::before {
+      content: '✓';
+      width: 24px; height: 24px;
+      background: var(--c-accent);
+      color: var(--c-white);
+      font-size: .8rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       TESTIMONIALE (Reviews)
+    ============================================================ */
+    #testimoniale { background: var(--c-dark); }
+
+    .testi-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: var(--c-navy);
+      border: 1px solid var(--c-border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .testi-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(232,76,30,.5);
+    }
+
+    .stars { color: var(--c-gold); font-size: 1.1rem; letter-spacing: .1em; margin-bottom: 1rem; }
+
+    .testi-card blockquote {
+      font-size: .97rem;
+      color: var(--c-text);
+      font-style: italic;
+      line-height: 1.65;
+      margin-bottom: 1.4rem;
+      border-left: 3px solid var(--c-accent);
+      padding-left: 1rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .author-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--c-blue), var(--c-accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--c-white);
+      flex-shrink: 0;
+    }
+
+    .author-info strong {
+      display: block;
+      font-weight: 600;
+      color: var(--c-white);
+      font-size: .95rem;
+    }
+
+    .author-info span { font-size: .8rem; color: var(--c-text); }
+
+    /* ============================================================
+       CTA SECTION (Contact)
+    ============================================================ */
+    #contact {
+      background: linear-gradient(135deg, var(--c-navy) 0%, var(--c-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,76,30,.15) 0%, transparent 70%);
+    }
+
+    .contact-inner {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-inner .section-title { max-width: 700px; margin: .5rem auto 1rem; }
+    .contact-inner .section-sub { margin: 0 auto 2.5rem; text-align: center; }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-display {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--c-white);
+      letter-spacing: .05em;
+    }
+
+    .contact-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--c-border);
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .95rem;
+      color: var(--c-text);
+    }
+
+    .info-item svg { width: 20px; height: 20px; stroke: var(--c-accent); fill: none; stroke-width: 2; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #090f18;
+      padding: 2rem 0;
+      text-align: center;
+      font-size: .85rem;
+      color: rgba(255,255,255,.35);
+    }
+
+    footer strong { color: rgba(255,255,255,.6); }
+
+    /* ============================================================
+       SCROLL REVEAL ANIMATION
+    ============================================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .despre-grid { grid-template-columns: 1fr; }
+      .despre-visual { display: none; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { gap: 1.5rem; }
+      .slide { height: 300px; }
+      .btn { padding: .85rem 1.5rem; font-size: 1.2rem; }
+      .phone-display { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav id="navbar" aria-label="Navigare principală">
+    <div class="container nav-inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="logo" aria-label="LIVDEN – pagina principală">
+        LIV<span>DEN</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links">
+        <li><a href="#servicii">Servicii</a></li>
+        <li><a href="#rute">Rute</a></li>
+        <li><a href="#despre">Despre noi</a></li>
+        <li><a href="#testimoniale">Recenzii</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Deschide meniu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <ul class="mobile-menu" id="mobile-menu" role="list">
+      <li><a href="#servicii" class="mobile-link">Servicii</a></li>
+      <li><a href="#rute" class="mobile-link">Rute</a></li>
+      <li><a href="#despre" class="mobile-link">Despre noi</a></li>
+      <li><a href="#testimoniale" class="mobile-link">Recenzii</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </nav><!-- /navbar -->
+
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" aria-label="Secțiunea principală LIVDEN">
+
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-stripes" aria-hidden="true"></div>
+    <div class="hero-deco" aria-hidden="true">20+</div>
+
+    <div class="container hero-content">
+
+      <!-- Badge animat -->
+      <div class="hero-badge" aria-hidden="true">Transport internațional de încredere</div>
+
+      <!-- Titlu principal -->
+      <h1 class="hero-title">
+        Transport internațional<br />
+        <em>persoane și colete</em>
+      </h1>
+
+      <!-- Subtitlu -->
+      <p class="hero-sub">
+        România – Austria – Germania – Belgia – Olanda – Anglia<br />
+        <strong style="color:var(--c-white);">LIVDEN</strong>, peste 20 de ani de experiență pe drumurile Europei.
+      </p>
+
+      <!-- Plecari miercuri -->
+      <div class="hero-departures" aria-label="Program plecări">
+        <span class="departures-icon">🗓️</span>
+        <span>Plecări în fiecare <strong>Miercuri</strong> din principalele orașe din România!
+        <br> Retur către România în fiecare <strong>Sâmbătă</strong>!</span>
+      </div>
+
+      <!-- Buton CTA – centrat, unic -->
+      <div class="hero-actions">
+        <a href="tel:+40746585822" class="btn btn-primary ring" aria-label="Sună acum la LIVDEN">
+          📞 Sună acum
+        </a>
+      </div>
+
+      <!-- Statistici -->
+      <div class="hero-stats" aria-label="Cifre cheie LIVDEN">
+        <div class="stat-item">
+          <span class="stat-num">20<span>+</span></span>
+          <span class="stat-label">Ani experiență</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">6<span></span></span>
+          <span class="stat-label">Țări deservite</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">10K<span>+</span></span>
+          <span class="stat-label">Clienți mulțumiți</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">365</span>
+          <span class="stat-label">Zile pe an activi</span>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- /hero -->
+
+
+  <!-- ============================================================
+       TICKER – Rute rulante
+  ============================================================ -->
+  <div id="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <!-- Duplicate pentru loop continuu -->
+      <span class="ticker-item">România</span>
+      <span class="ticker-item">Austria</span>
+      <span class="ticker-item">Germania</span>
+      <span class="ticker-item">Belgia</span>
+      <span class="ticker-item">Olanda</span>
+      <span class="ticker-item">Anglia</span>
+      <span class="ticker-item">Transport persoane</span>
+      <span class="ticker-item">Transport colete</span>
+      <span class="ticker-item">Peste 20 de ani pe drumuri</span>
+      <span class="ticker-item">România</span>
+      <span class="ticker-item">Austria</span>
+      <span class="ticker-item">Germania</span>
+      <span class="ticker-item">Belgia</span>
+      <span class="ticker-item">Olanda</span>
+      <span class="ticker-item">Anglia</span>
+      <span class="ticker-item">Transport persoane</span>
+      <span class="ticker-item">Transport colete</span>
+      <span class="ticker-item">Peste 20 de ani pe drumuri</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       SERVICII
+  ============================================================ -->
+  <section id="servicii" aria-labelledby="servicii-title">
+    <div class="container">
+
+      <div class="reveal">
+        <h2 class="section-title dark" id="servicii-title">Serviciile noastre</h2>
+        <p class="section-sub dark">
+          Indiferent că mergi în vizită, la muncă sau trimiți un pachet drag cuiva, LIVDEN are soluția potrivită pentru tine.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Card 1: Transport persoane -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- Passenger icon -->
+<svg width="16" height="16" viewBox="0 0 16 16" 
+     xmlns="http://www.w3.org/2000/svg" 
+     fill="none" stroke="currentColor" stroke-width="1.2">
+  <circle cx="8" cy="5" r="2.5"/>
+  <path d="M2 13c0-2.5 3-4 6-4s6 1.5 6 4"/>
+</svg>
+          </div>
+          <h3>Transport Persoane</h3>
+          <p>Călătorii confortabile cu microbuze moderne, dotate cu aer condiționat, WiFi și locuri ergonomice. Plecare din orașele principale din România.</p>
+        </div>
+
+        <!-- Card 2: Transport colete -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- Package icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 7L12 3L4 7M20 7V17L12 21M20 7L12 11M12 21L4 17V7M12 21V11M4 7L12 11" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Transport Colete</h3>
+          <p>Trimite colete, documente sau bagaje suplimentare rapid și sigur. Ridicare la domiciliu și livrare la destinație, oriunde în Europa.</p>
+        </div>
+
+        <!-- Card 3: Rute internaționale -->
+        <div class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <!-- Map icon -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 20L3 17V4L9 7M9 20L15 17M9 20V7M15 17L21 20V7L15 4M15 17V4M9 7L15 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Rute Europa</h3>
+          <p>Conexiuni directe România – Austria – Germania – Belgia – Olanda – Anglia. Plecări regulate, prețuri competitive și program flexibil.</p>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /servicii -->
+
+
+  <!-- ============================================================
+       RUTE / ȚĂRI
+  ============================================================ -->
+  <section id="rute" aria-labelledby="rute-title">
+    <div class="container">
+
+      <div class="rute-header reveal">
+        <h2 class="section-title" id="rute-title">Rutele noastre internaționale</h2>
+        <p class="section-sub" style="margin-inline:auto;">
+          Acoperim cele mai solicitate rute din România spre Europa de Vest. Verifică programul de plecări și rezervă-ți locul astăzi.
+        </p>
+      </div>
+
+      <!-- Grilă țări -->
+      <div class="countries-grid">
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇷🇴</div>
+          <div class="country-name">România</div>
+        </div>
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇦🇹</div>
+          <div class="country-name">Austria</div>
+        </div>
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇩🇪</div>
+          <div class="country-name">Germania</div>
+        </div>
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇧🇪</div>
+          <div class="country-name">Belgia</div>
+        </div>
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇳🇱</div>
+          <div class="country-name">Olanda</div>
+        </div>
+
+        <div class="country-card reveal" role="listitem">
+          <div class="country-flag" aria-hidden="true">🇬🇧</div>
+          <div class="country-name">Anglia</div>
+        </div>
+
+      </div>
+
+      <!-- Linie de rută -->
+      <div class="route-line reveal" aria-label="Ruta principală LIVDEN">
+        <span class="route-step">România</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Austria</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Germania</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Belgia</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Olanda</span>
+        <span class="route-arrow">→</span>
+        <span class="route-step">Anglia</span>
+      </div>
+
+    </div>
+  </section><!-- /rute -->
+
+
+  <!-- ============================================================
+       GALERIE / SLIDESHOW
+  ============================================================ -->
+<section class="gallery-section" id="galerie">
+  <div class="container">
+
+    <div class="section-header reveal" style="text-align: center; margin-bottom: 1rem;">
+      <h2>Galerie</h2>
+      <p>
+        Persoane și colete transportate în siguranță pe rute din România către
+        Austria, Germania, Belgia, Olanda și Anglia.
+      </p>
+    </div>
+
+    <div class="carousel reveal" role="region" aria-label="Galerie imagini LIVDEN" aria-live="polite">
+
+      <div class="slides-wrapper" id="slides-wrapper">
+
+        <div class="slide active" role="group" aria-label="Slide 1: Transport internațional">
+          <div class="slide-bg" style="background-image: url('photo4.jpg');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-caption">
+            <span>LIVDEN Transport</span>
+            <h4>Transport internațional persoane și colete</h4>
+            <p>România → Austria, Germania, Belgia, Olanda și Anglia.</p>
+          </div>
+        </div>
+
+        <div class="slide" role="group" aria-label="Slide 2: Flotă modernă">
+          <div class="slide-bg" style="background-image: url('photo2.jpg');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-caption">
+            <span>Confort & siguranță</span>
+            <h4>Flotă pregătită pentru drumuri lungi</h4>
+            <p>Microbuze confortabile, șoferi cu experiență și curse organizate.</p>
+          </div>
+        </div>
+
+        <div class="slide" role="group" aria-label="Slide 3: Rute europene">
+          <div class="slide-bg" style="background-image: url('photo3.jpg');"></div>
+          <div class="slide-overlay"></div>
+          <div class="slide-caption">
+            <span>Rute europene</span>
+            <h4>Ajungi în siguranță la destinație</h4>
+            <p>Ridicare și livrare cu atenție, atât pentru persoane, cât și pentru colete.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn prev" id="prev-btn" type="button" aria-label="Imaginea anterioară">
+        &#8249;
+      </button>
+
+      <button class="carousel-btn next" id="next-btn" type="button" aria-label="Imaginea următoare">
+        &#8250;
+      </button>
+
+    </div>
+
+    <div class="carousel-dots" role="tablist" aria-label="Selectează imaginea">
+      <button class="dot active" type="button" data-index="0" role="tab" aria-selected="true" aria-label="Imaginea 1"></button>
+      <button class="dot" type="button" data-index="1" role="tab" aria-selected="false" aria-label="Imaginea 2"></button>
+      <button class="dot" type="button" data-index="2" role="tab" aria-selected="false" aria-label="Imaginea 3"></button>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ============================================================
+       DESPRE NOI
+  ============================================================ -->
+  <section id="despre" aria-labelledby="despre-title">
+    <div class="container">
+      <div class="despre-grid">
+
+        <!-- Visual card -->
+        <div class="despre-visual reveal" aria-hidden="true">
+          <div class="despre-card-main">
+            <div class="experience-badge">20<sup>+</sup></div>
+            <h3>Ani de experiență</h3>
+            <p>Pe drumurile Europei, zi și noapte, cu responsabilitate și pasiune pentru transport.</p>
+          </div>
+          <div class="despre-card-mini">
+            <div class="mini-num">6</div>
+            <div class="mini-label">Țări deservite</div>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="despre-text reveal">
+          <span class="section-label">Despre noi</span>
+          <h2 class="section-title" id="despre-title" style="color:var(--c-text-dark);">LIVDEN – partenerul tău de transport în Europa</h2>
+
+          <p>
+            <strong>LIVDEN</strong> oferă servicii de transport internațional persoane și colete de <strong>peste 20 de ani</strong>, punând accent pe seriozitate, siguranță, punctualitate și comunicare rapidă cu clienții.
+          </p>
+
+          <p>
+            Am crescut împreună cu comunitățile românești din Europa, construind o rețea solidă de rute care conectează România cu Austria, Germania, Belgia, Olanda și Anglia. Fiecare client este un om, nu un număr de loc.
+          </p>
+
+          <p>
+            Cu o flotă modernă și șoferi experimentați, garantăm confort și siguranță pe fiecare kilometru parcurs împreună.
+          </p>
+
+          <ul class="values-list" aria-label="Valorile LIVDEN">
+            <li>Seriozitate și profesionalism de peste 20 de ani</li>
+            <li>Siguranță certificată – flota verificată periodic</li>
+            <li>Punctualitate – respectăm timpul tău</li>
+            <li>Comunicare rapidă – ești informat la fiecare pas</li>
+            <li>Prețuri corecte, fără surprize</li>
+          </ul>
+
+          <a href="tel:+40746585822" class="btn btn-primary" aria-label="Sună și rezervă acum">
+            📞 Rezervă acum
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /despre -->
+
+
+  <!-- ============================================================
+       TESTIMONIALE
+  ============================================================ -->
+  <section id="testimoniale" aria-labelledby="testi-title">
+    <div class="container">
+
+      <div class="testi-header reveal">
+        <span class="section-label">Recenzii clienți</span>
+        <h2 class="section-title" id="testi-title">Ce spun clienții noștri</h2>
+        <p class="section-sub" style="margin-inline:auto;">
+          Peste 10.000 de clienți mulțumiți. Iată câteva dintre experiențele lor cu LIVDEN.
+        </p>
+      </div>
+
+      <div class="testi-grid">
+
+        <!-- Recenzie 1 -->
+        <div class="testi-card reveal">
+          <div class="stars" aria-label="5 stele din 5">★★★★★</div>
+          <blockquote>
+            „Călătorie excelentă București – Viena. Microbuzul era curat, șoferul prietenos și am ajuns la timp. Am trimis și câteva colete cu ei – totul a ajuns intact. Recomand cu căldură!"
+          </blockquote>
+          <div class="testi-author">
+            <div class="author-avatar" aria-hidden="true">AM</div>
+            <div class="author-info">
+              <strong>Andreea M.</strong>
+              <span>Cluj-Napoca → Viena, Austria</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recenzie 2 -->
+        <div class="testi-card reveal">
+          <div class="stars" aria-label="5 stele din 5">★★★★★</div>
+          <blockquote>
+            „Folosesc LIVDEN de 5 ani pentru a merge în Germania. Sunt singurii cu care mă simt în siguranță pe ruta asta lungă. Prețuri bune, oameni serioși. Nu schimb cu nimic!"
+          </blockquote>
+          <div class="testi-author">
+            <div class="author-avatar" aria-hidden="true">CI</div>
+            <div class="author-info">
+              <strong>Cosmin I.</strong>
+              <span>Timișoara → München, Germania</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recenzie 3 -->
+        <div class="testi-card reveal">
+          <div class="stars" aria-label="5 stele din 5">★★★★★</div>
+          <blockquote>
+            „Am trimis un colet urgent mamei mele din Anglia. LIVDEN l-a ridicat de la mine acasă și l-a livrat direct la ușa ei în România. Comunicare perfectă pe tot parcursul. Mulțumesc!"
+          </blockquote>
+          <div class="testi-author">
+            <div class="author-avatar" aria-hidden="true">MP</div>
+            <div class="author-info">
+              <strong>Maria P.</strong>
+              <span>Londra, Anglia → Iași, România</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recenzie 4 -->
+        <div class="testi-card reveal">
+          <div class="stars" aria-label="4 stele din 5">★★★★★</div>
+          <blockquote>
+            „Profesionalism desăvârșit. Am mers cu LIVDEN pe ruta Romania–Belgia de mai multe ori. Îmi place că sunt mereu punctuali și că pot suna oricând pentru informații. Mulți ani de succes!"
+          </blockquote>
+          <div class="testi-author">
+            <div class="author-avatar" aria-hidden="true">GD</div>
+            <div class="author-info">
+              <strong>George D.</strong>
+              <span>Brașov → Bruxelles, Belgia</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /testimoniale -->
+
+
+  <!-- ============================================================
+       CONTACT / CTA FINAL
+  ============================================================ -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-inner reveal">
+
+        <span class="section-label">Contactează-ne</span>
+        <h2 class="section-title" id="contact-title" style="max-width:700px;margin:auto auto 1rem;">
+          Gata să pleci sau să trimiți un colet?
+        </h2>
+        <p class="section-sub">
+          Nu amâna – locurile se ocupă repede! Sună acum și rezervă-ți locul sau programează ridicarea coletului. Suntem disponibili 7 zile din 7.
+        </p>
+
+        <div class="contact-actions">
+          <a href="tel:+40746585822" class="btn btn-primary ring" style="font-size:1.2rem;padding:1rem 2.5rem;" aria-label="Sună acum la LIVDEN">
+            📞 Sună acum
+          </a>
+          <div class="phone-display" aria-label="Număr de telefon">+40 XXX XXX XXX</div>
+        </div>
+
+        <!-- Info row -->
+        <div class="contact-info-row">
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="none" fill="var(--c-accent)"/>
+            </svg>
+            România – Austria – Germania – Belgia – Olanda – Anglia
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 6v6l4 2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Disponibil 7 zile din 7, non-stop
+          </div>
+          <div class="info-item">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Peste 20 ani experiență
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- /contact -->
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="container">
+      <p>
+        © <span id="year"></span> <strong>LIVDEN</strong> – Transport Internațional Persoane și Colete.
+        Toate drepturile rezervate.
+      </p>
+      <p style="margin-top:.4rem;">
+        România · Austria · Germania · Belgia · Olanda · Anglia
+      </p>
+<p>
+  Website creat cu precizie de 
+  <a href="https://www.scalamafaceri.ro/" target="_blank" rel="noopener noreferrer">
+    <strong style="color: red;">scalamafaceri.ro</strong>
+  </a>
+</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* -------------------------------------------------------
+       1. An curent în footer
+    ------------------------------------------------------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+
+    /* -------------------------------------------------------
+       2. Navbar – scroll class
+    ------------------------------------------------------- */
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+
+    /* -------------------------------------------------------
+       3. Hamburger menu
+    ------------------------------------------------------- */
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
+
+  document.body.classList.toggle('menu-open', isOpen); // 🔴 ADAUGAT
+});
+
+// Închide meniul la click pe link
+mobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+
+    document.body.classList.remove('menu-open'); // 🔴 ADAUGAT
+  });
+});
+
+
+    /* -------------------------------------------------------
+       4. Carousel / Slideshow
+    ------------------------------------------------------- */
+    const slidesWrapper = document.getElementById('slides-wrapper');
+    const dots          = document.querySelectorAll('.dot');
+    const prevBtn       = document.getElementById('prev-btn');
+    const nextBtn       = document.getElementById('next-btn');
+
+    let currentSlide = 0;
+    const totalSlides = dots.length;
+    let autoplayTimer;
+
+    function goToSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+        dot.setAttribute('aria-selected', i === currentSlide);
+      });
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => goToSlide(currentSlide + 1), 4500);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayTimer);
+    }
+
+    prevBtn.addEventListener('click', () => {
+      goToSlide(currentSlide - 1);
+      startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      goToSlide(currentSlide + 1);
+      startAutoplay();
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goToSlide(parseInt(dot.dataset.index, 10));
+        startAutoplay();
+      });
+    });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    slidesWrapper.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    slidesWrapper.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? currentSlide + 1 : currentSlide - 1);
+        startAutoplay();
+      }
+    }, { passive: true });
+
+    startAutoplay();
+
+
+    /* -------------------------------------------------------
+       5. Scroll Reveal
+    ------------------------------------------------------- */
+    const revealEls = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+
+    /* -------------------------------------------------------
+       6. Smooth active nav highlight on scroll
+    ------------------------------------------------------- */
+    const sections  = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(a => {
+            a.style.color = a.getAttribute('href') === `#${id}`
+              ? 'var(--c-white)'
+              : '';
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+  </script>
+
+    <script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({ behavior: 'smooth' });
+    history.pushState("", document.title, window.location.pathname + window.location.search);
+  });
+});
+  </script>
+
+</body>
+</html>
